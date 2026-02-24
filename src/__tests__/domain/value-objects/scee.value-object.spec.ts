@@ -8,4 +8,12 @@ describe('SCEE - value object', () => {
     expect(scee).toBeInstanceOf(SCEE);
     expect(scee.value).toBe(15);
   });
+
+  it('should convert null value to zero', () => {
+    const value = null;
+
+    const scee = SCEE.create(value);
+
+    expect(scee.value).toBe(0);
+  });
 });
