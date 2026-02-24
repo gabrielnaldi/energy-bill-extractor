@@ -15,4 +15,12 @@ describe('GD - value object', () => {
 
     expect(gd.value).toBe(0);
   });
+
+  it('should not allow GD eletric quantity to be negative', () => {
+    const value = -100;
+
+    const fn = () => GD.create(value);
+
+    expect(fn).toThrow('GD eletric quantity can not be negative!');
+  });
 });
