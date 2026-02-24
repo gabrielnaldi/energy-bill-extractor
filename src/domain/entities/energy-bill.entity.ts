@@ -12,7 +12,7 @@ export class EnergyBill {
 
   // Getters
   get id() {
-    return this.props.id;
+    return this.props.id.value;
   }
 
   get clientNumber() {

@@ -1,10 +1,13 @@
 import { EnergyBill } from '@src/domain/entities/energy-bill.entity';
 import { EletricQuantity } from '@src/domain/value-objects/eletric-quantity.value-object';
 import { GD } from '@src/domain/value-objects/gd.value-object';
+import { ID } from '@src/domain/value-objects/id.value-object';
 import { SCEE } from '@src/domain/value-objects/scee.value-object';
 import { EnergyBillCreateContract } from 'src/domain/contracts/energy-bill.contracts';
 
 describe('Energy bill - entity', () => {
+  const MOCK_ID = ID.create('1');
+
   const MOCK_ELETRIC_QUANTITY = EletricQuantity.create(100);
 
   const MOCK_SCEE_QUANTITY = SCEE.create(200);
@@ -12,7 +15,7 @@ describe('Energy bill - entity', () => {
   const MOCK_GD_QUANTITY = GD.create(400);
 
   const MOCK_DATA: EnergyBillCreateContract = {
-    id: '1',
+    id: MOCK_ID,
     clientNumber: 'client-1',
     referenceMonth: 'SET/2024',
     eletricQuantity: MOCK_ELETRIC_QUANTITY,
