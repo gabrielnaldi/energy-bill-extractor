@@ -23,8 +23,8 @@ export class EnergyBill {
     return this.props.referenceMonth;
   }
 
-  get eletricValue() {
-    return this.props.eletricValue;
+  get eletricQuantity() {
+    return this.props.eletricQuantity.value;
   }
 
   get SCEEValue() {
@@ -37,17 +37,12 @@ export class EnergyBill {
 
   // Factories
   public static create(contract: EnergyBillCreateContract) {
-    const eletricValue = contract.eletricValue || 0;
-
     const SCEEValue = contract.SCEEValue || 0;
 
     const GDValue = contract.GDValue || 0;
 
     const contractData: EnergyBillContract = {
-      id: contract.id,
-      clientNumber: contract.clientNumber,
-      referenceMonth: contract.referenceMonth,
-      eletricValue,
+      ...contract,
       SCEEValue,
       GDValue,
     };
