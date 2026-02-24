@@ -10,10 +10,13 @@ export class EletricQuantity {
     return this._value;
   }
 
-  public static create(value: number) {
-    if (value < 0) throw new Error('Eletric quantity can not be negative!');
+  public static create(value: number | null) {
+    const fixedValue = value || 0;
 
-    const eletricQuantity = new EletricQuantity(value);
+    if (fixedValue < 0)
+      throw new Error('Eletric quantity can not be negative!');
+
+    const eletricQuantity = new EletricQuantity(fixedValue);
 
     return eletricQuantity;
   }
