@@ -9,4 +9,12 @@ describe('Eletric quantity - value object', () => {
     expect(eletricQuantity).toBeInstanceOf(EletricQuantity);
     expect(eletricQuantity.value).toBe(100);
   });
+
+  it('should convert null value to zero', () => {
+    const value = null;
+
+    const eletricQuantity = EletricQuantity.create(value);
+
+    expect(eletricQuantity.value).toBe(0);
+  });
 });
