@@ -7,4 +7,12 @@ describe('GD - value object', () => {
     expect(gd).toBeDefined();
     expect(gd.value).toBe(100);
   });
+
+  it('should convert null value to zero', () => {
+    const value = null;
+
+    const gd = GD.create(value);
+
+    expect(gd.value).toBe(0);
+  });
 });
