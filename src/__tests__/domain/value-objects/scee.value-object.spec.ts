@@ -16,4 +16,12 @@ describe('SCEE - value object', () => {
 
     expect(scee.value).toBe(0);
   });
+
+  it('should not allow SCEE quantity to be negative', () => {
+    const value = -100;
+
+    const fn = () => SCEE.create(value);
+
+    expect(fn).toThrow('SCEE energy quantity can not be negative!');
+  });
 });
