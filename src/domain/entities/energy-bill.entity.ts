@@ -27,8 +27,8 @@ export class EnergyBill {
     return this.props.eletricQuantity.value;
   }
 
-  get SCEEValue() {
-    return this.props.SCEEValue;
+  get scee() {
+    return this.props.scee.value;
   }
 
   get GDValue() {
@@ -37,13 +37,10 @@ export class EnergyBill {
 
   // Factories
   public static create(contract: EnergyBillCreateContract) {
-    const SCEEValue = contract.SCEEValue || 0;
-
     const GDValue = contract.GDValue || 0;
 
     const contractData: EnergyBillContract = {
       ...contract,
-      SCEEValue,
       GDValue,
     };
 

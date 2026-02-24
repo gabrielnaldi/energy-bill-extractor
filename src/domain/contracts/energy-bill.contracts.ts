@@ -1,11 +1,12 @@
 import { EletricQuantity } from '../value-objects/eletric-quantity.value-object';
+import { SCEE } from '../value-objects/scee.value-object';
 
 export interface EnergyBillContract {
   id: string;
   clientNumber: string;
   referenceMonth: string;
   eletricQuantity: EletricQuantity;
-  SCEEValue: number;
+  scee: SCEE;
   GDValue: number;
 }
 
@@ -14,6 +15,6 @@ export interface EnergyBillCreateContract {
   clientNumber: string;
   referenceMonth: string;
   eletricQuantity: EletricQuantity;
-  SCEEValue: number | null;
+  scee: SCEE;
   GDValue: number | null;
 }
