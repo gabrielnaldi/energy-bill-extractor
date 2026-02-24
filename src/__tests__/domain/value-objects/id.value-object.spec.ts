@@ -8,4 +8,12 @@ describe('ID - value object', () => {
     expect(id).toBeInstanceOf(ID);
     expect(id.value).toBe('fake-id');
   });
+
+  it('should not allow IDs to be empty', () => {
+    const value = '';
+
+    const fn = () => ID.create(value);
+
+    expect(fn).toThrow('ID can not be empty!');
+  });
 });
