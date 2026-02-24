@@ -17,4 +17,12 @@ describe('Eletric quantity - value object', () => {
 
     expect(eletricQuantity.value).toBe(0);
   });
+
+  it('should not allow ELETRIC QUANTITY to be negative', () => {
+    const value = -100;
+
+    const fn = () => EletricQuantity.create(value);
+
+    expect(fn).toThrow('Eletric quantity can not be negative!');
+  });
 });
