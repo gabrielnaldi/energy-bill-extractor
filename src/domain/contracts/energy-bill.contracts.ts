@@ -1,4 +1,5 @@
 import { EletricQuantity } from '../value-objects/eletric-quantity.value-object';
+import { GD } from '../value-objects/gd.value-object';
 import { SCEE } from '../value-objects/scee.value-object';
 
 export interface EnergyBillContract {
@@ -7,7 +8,7 @@ export interface EnergyBillContract {
   referenceMonth: string;
   eletricQuantity: EletricQuantity;
   scee: SCEE;
-  GDValue: number;
+  gd: GD;
 }
 
 export interface EnergyBillCreateContract {
@@ -16,5 +17,5 @@ export interface EnergyBillCreateContract {
   referenceMonth: string;
   eletricQuantity: EletricQuantity;
   scee: SCEE;
-  GDValue: number | null;
+  gd: GD;
 }

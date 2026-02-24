@@ -31,20 +31,13 @@ export class EnergyBill {
     return this.props.scee.value;
   }
 
-  get GDValue() {
-    return this.props.GDValue;
+  get gd() {
+    return this.props.gd.value;
   }
 
   // Factories
   public static create(contract: EnergyBillCreateContract) {
-    const GDValue = contract.GDValue || 0;
-
-    const contractData: EnergyBillContract = {
-      ...contract,
-      GDValue,
-    };
-
-    const energyBill = new EnergyBill(contractData);
+    const energyBill = new EnergyBill(contract);
 
     return energyBill;
   }
