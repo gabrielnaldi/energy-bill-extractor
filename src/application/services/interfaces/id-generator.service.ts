@@ -1,3 +1,3 @@
-export interface IDGenerator {
-  generate(): string;
+export abstract class IDGenerator {
+  abstract execute(): string;
 }
